@@ -48,6 +48,7 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            flex-direction: column;
         }
 
         .button:hover {
@@ -55,6 +56,12 @@
             color: #ffcc00;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .button-description {
+            font-size: 0.9em;
+            margin-top: 10px;
+            color: #555;
         }
 
         footer {
@@ -72,14 +79,12 @@
             border-radius: 5px;
         }
 
-        /* تنسيق الهاتف المحمول */
         @media (max-width: 768px) {
             .button-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* تنسيق الشاشة الصغيرة */
         @media (max-width: 480px) {
             .button-container {
                 grid-template-columns: 1fr;
@@ -94,14 +99,38 @@
     </div>
 
     <div class="button-container">
-        <a href="#" class="button" style="background-color: #ff6666;"><i class="fas fa-calendar-alt"></i> التدرجات الشهرية و السنوية</a>
-        <a href="#" class="button" style="background-color: #66cc66;"><i class="fas fa-puzzle-piece"></i> نماذج تقويم تشخيصي</a>
-        <a href="#" class="button" style="background-color: #66ccff;"><i class="fas fa-chalkboard-teacher"></i> وضعيات (إنطلاق - إدماج - تقويم)</a>
-        <a href="#" class="button" style="background-color: #ffcc33;"><i class="fas fa-book"></i> مذكرات دروس</a>
-        <a href="#" class="button" style="background-color: #ff9966;"><i class="fas fa-pencil-alt"></i> مذكرات أعمال موجهة</a>
-        <a href="#" class="button" style="background-color: #ffcc66;"><i class="fas fa-book-open"></i> حلول تمارين كتاب المدرسي</a>
-        <a href="#" class="button" style="background-color: #66ccff;"><i class="fas fa-file-alt"></i> فروض</a>
-        <a href="#" class="button" style="background-color: #66ff66;"><i class="fas fa-check-circle"></i> اختبارات</a>
+        <a href="#" class="button" style="background-color: #ff6666;">
+            <i class="fas fa-calendar-alt"></i> التدرجات الشهرية و السنوية
+            <p class="button-description">تحميل الجداول الشهرية والسنوية للفصول الدراسية.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #66cc66;">
+            <i class="fas fa-puzzle-piece"></i> نماذج تقويم تشخيصي
+            <p class="button-description">نماذج لتقييم المستوى الدراسي للطلاب.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #66ccff;">
+            <i class="fas fa-chalkboard-teacher"></i> وضعيات (إنطلاق - إدماج - تقويم)
+            <p class="button-description">وضعيات تعليمية لتحسين الفهم.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #ffcc33;">
+            <i class="fas fa-book"></i> مذكرات دروس
+            <p class="button-description">تحميل مذكرات الدروس للفصل الدراسي.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #ff9966;">
+            <i class="fas fa-pencil-alt"></i> مذكرات أعمال موجهة
+            <p class="button-description">مذكرات للأعمال الموجهة والأنشطة.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #ffcc66;">
+            <i class="fas fa-book-open"></i> حلول تمارين كتاب المدرسي
+            <p class="button-description">حلول لجميع تمارين الكتاب المدرسي.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #66ccff;">
+            <i class="fas fa-file-alt"></i> فروض
+            <p class="button-description">تحميل الفروض والواجبات المدرسية.</p>
+        </a>
+        <a href="#" class="button" style="background-color: #66ff66;">
+            <i class="fas fa-check-circle"></i> اختبارات
+            <p class="button-description">نماذج اختبارات للتدريب.</p>
+        </a>
     </div>
 
     <footer>
