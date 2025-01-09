@@ -81,7 +81,7 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .news-section, .popular-downloads {
+        .video-section, .popular-downloads {
             background-color: white;
             padding: 20px;
             margin: 20px auto;
@@ -91,17 +91,30 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .news-section h2, .popular-downloads h2 {
+        .video-section h2, .popular-downloads h2 {
             color: #003366;
             margin-bottom: 15px;
         }
 
-        .news-section ul, .popular-downloads ul {
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        .popular-downloads ul {
             list-style-type: none;
             padding: 0;
         }
 
-        .news-section li, .popular-downloads li {
+        .popular-downloads li {
             margin: 10px 0;
         }
 
@@ -152,12 +165,22 @@
         <a href="teacher-documents.html" class="button"><i class="fas fa-chalkboard"></i> وثائق الأستاذ</a>
     </div>
 
-    <div class="news-section">
-        <h2>آخر التحديثات</h2>
-        <ul>
-            <li>تمت إضافة دروس جديدة للفصل الأول.</li>
-            <li>تم تحديث حلول تمارين الكتاب المدرسي.</li>
-        </ul>
+    <div class="video-section">
+        <h2>فيديوهات تفاعلية</h2>
+        <div class="video-grid">
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/BXc936XjzpU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/G-4JB9Li74g" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/MUNuJz3hagQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="video-item">
+                <iframe src="https://www.youtube.com/embed/ilb7iZjaMlc" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
     <div class="popular-downloads">
