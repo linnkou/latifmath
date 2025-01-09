@@ -23,6 +23,30 @@
             margin-bottom: 30px;
         }
 
+        .search-bar {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #003366;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #003366;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
         .button-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -57,6 +81,30 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
+        .news-section, .popular-downloads {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-section h2, .popular-downloads h2 {
+            color: #003366;
+            margin-bottom: 15px;
+        }
+
+        .news-section ul, .popular-downloads ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .news-section li, .popular-downloads li {
+            margin: 10px 0;
+        }
+
         footer {
             background-color: #003366;
             color: white;
@@ -72,14 +120,12 @@
             border-radius: 5px;
         }
 
-        /* تنسيق الهاتف المحمول */
         @media (max-width: 768px) {
             .button-container {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* تنسيق الشاشة الصغيرة */
         @media (max-width: 480px) {
             .button-container {
                 grid-template-columns: 1fr;
@@ -93,12 +139,33 @@
         الرياضيات السهلة
     </div>
 
+    <div class="search-bar">
+        <input type="text" placeholder="ابحث عن درس أو تمرين...">
+        <button><i class="fas fa-search"></i> بحث</button>
+    </div>
+
     <div class="button-container">
         <a href="first-year.html" class="button"><i class="fas fa-calendar-alt"></i> السنة أولى متوسط</a>
         <a href="second-year.html" class="button"><i class="fas fa-puzzle-piece"></i> السنة ثانية متوسط</a>
         <a href="third-year.html" class="button"><i class="fas fa-chalkboard-teacher"></i> السنة ثالثة متوسط</a>
         <a href="fourth-year.html" class="button"><i class="fas fa-book"></i> السنة رابعة متوسط</a>
         <a href="teacher-documents.html" class="button"><i class="fas fa-chalkboard"></i> وثائق الأستاذ</a>
+    </div>
+
+    <div class="news-section">
+        <h2>آخر التحديثات</h2>
+        <ul>
+            <li>تمت إضافة دروس جديدة للفصل الأول.</li>
+            <li>تم تحديث حلول تمارين الكتاب المدرسي.</li>
+        </ul>
+    </div>
+
+    <div class="popular-downloads">
+        <h2>التحميلات الشائعة</h2>
+        <ul>
+            <li><a href="#">حلول تمارين الفصل الأول</a></li>
+            <li><a href="#">نماذج اختبارات السنة الرابعة</a></li>
+        </ul>
     </div>
 
     <footer>
