@@ -1,5 +1,5 @@
 <?php
-// إعدادات الاتصال بقاعدة البيانات (إذا كنت تستخدم قاعدة بيانات)
+// إعدادات الاتصال بقاعدة البيانات
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -17,6 +17,7 @@ if ($conn->connect_error) {
 $year = $_POST['year'];
 $fileType = $_POST['file-type'];
 $fileName = basename($_FILES["file"]["name"]);
+$fileSize = $_FILES["file"]["size"]; // حجم الملف بالبايت
 $targetDir = "uploads/" . $year . "/" . $fileType . "/";
 
 // إنشاء المجلد إذا لم يكن موجوداً
@@ -28,17 +29,25 @@ $targetFile = $targetDir . $fileName;
 
 // تحريك الملف المرفوع إلى المجلد المناسب
 if (move_uploaded_file($_FILES["file"]["tmp_name"], $targetFile)) {
-    echo "تم رفع الملف بنجاح: " . $fileName;
-
-    // حفظ معلومات الملف في قاعدة البيانات (اختياري)
-    $sql = "INSERT INTO files (year, file_type, file_name, file_path) VALUES ('$year', '$fileType', '$fileName', '$targetFile')";
+    // حفظ معلومات الملف في قاعدة البيانات
+    $sql = "INSERT INTO files (year, file_type, file_name, file_path, file_size) VALUES ('$year', '$fileType', '$fileName', '$targetFile', '$fileSize')";
     if ($conn->query($sql) === TRUE) {
-        echo "تم حفظ المعلومات في قاعدة البيانات.";
+        // توجيه المستخدم إلى الصفحة المناسبة بناءً على السنة الدراسية
+        if ($year == "first-year") {
+            header("Location: first-year.php");
+        } elseif ($year == "second-year") {
+            header("Location: second-year.php");
+        } elseif ($year == "third-year") {
+            header("Location: third-year.php");
+        } elseif ($year == "fourth-year") {
+            header("Location: fourth-year.php");
+        }
+        exit();
     } else {
-        echo "خطأ في حفظ المعلومات: " . $conn->error;
+        echo "<script>alert('خطأ في حفظ المعلومات: " . $conn->error . "');</script>";
     }
 } else {
-    echo "حدث خطأ أثناء رفع الملف.";
+    echo "<script>alert('حدث خطأ أثناء رفع الملف.');</script>";
 }
 
 $conn->close();
